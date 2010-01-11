@@ -1,0 +1,12 @@
+; Hash v1.0 config file
+[modules]
+ntdll
+kernel32
+urlmon
+[functions]
+kernel32!LoadLibraryA
+urlmon!URLDownloadToCacheFileA
+[hash function]
+XORROR16B
+[collision level]
+all
