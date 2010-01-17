@@ -2,10 +2,10 @@
 
 ECHO     + Checking shellcode for NULL bytes:
 ECHO       + w32-dl-loadlib-shellcode.bin
-BETA3 h --nullfree w32-dl-loadlib-shellcode.bin > nul
+CALL BETA3 h --nullfree w32-dl-loadlib-shellcode.bin > nul
 IF ERRORLEVEL 1 GOTO :FAILED
 ECHO       + w32-dl-loadlib-shellcode-esp.bin
-BETA3 h --nullfree w32-dl-loadlib-shellcode-esp.bin > nul
+CALL BETA3 h --nullfree w32-dl-loadlib-shellcode-esp.bin > nul
 IF ERRORLEVEL 1 GOTO :FAILED
 
 ECHO     + Running shellcode:
