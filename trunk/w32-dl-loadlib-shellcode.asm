@@ -36,6 +36,7 @@ get_proc_address_loop: ; Find the PE header and export and names tables of the m
     MOV     EBX, [EBP + EBX + 0x78]     ; EBX = offset(export table)
     ADD     EBX, EBP                    ; EBX = &(export table)
     MOV     ECX, [EBX + 0x18]           ; ECX = number of name pointers
+    JCXZ    next_module                 ; No name pointers? Next module.
 next_function_loop: ; Get the next function name for hashing:
     MOV     EDI, [EBX + 0x20]           ; EDI = offset(names table)
     ADD     EDI, EBP                    ; EDI = &(names table)
